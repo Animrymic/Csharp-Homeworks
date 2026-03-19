@@ -136,5 +136,101 @@ else
 #region Task 1 Homework.md 
 
 
+// Ask for the first number
+Console.Write("Enter the first number: ");
+string firstInput = Console.ReadLine();
+double firstNumber;
+while (!double.TryParse(firstInput, out firstNumber))
+{
+    Console.Write("Invalid input! Enter a valid number: ");
+    firstInput = Console.ReadLine();
+}
+
+// Ask for the second number
+Console.Write("Enter the second number: ");
+string secondInput = Console.ReadLine();
+double secondNumber;
+while (!double.TryParse(secondInput, out secondNumber))
+{
+    Console.Write("Invalid input! Enter a valid number: ");
+    secondInput = Console.ReadLine();
+}
+
+// Ask for the operation
+Console.Write("Enter the operation (+, -, *, /): ");
+string operation = Console.ReadLine();
+
+double result = 0;
+bool validOperation = true;
+
+// Perform calculation
+switch (operation)
+{
+    case "+":
+        result = firstNumber + secondNumber;
+        break;
+    case "-":
+        result = firstNumber - secondNumber;
+        break;
+    case "*":
+        result = firstNumber * secondNumber;
+        break;
+    case "/":
+        if (secondNumber != 0)
+            result = firstNumber / secondNumber;
+        else
+        {
+            Console.WriteLine("Error: Cannot divide by zero!");
+            validOperation = false;
+        }
+        break;
+    default:
+        Console.WriteLine("Error: Invalid operation!");
+        validOperation = false;
+        break;
+}
+
+if (validOperation)
+{
+    Console.WriteLine("The result is: " + result);
+}
+
+#endregion
+
+#region Task 2 Homework.md
+
+Console.Write("Enter the first number: ");
+double firstNumValue = double.Parse(Console.ReadLine());
+
+Console.Write("Enter the second number: ");
+double secondNumValue = double.Parse(Console.ReadLine());
+
+Console.Write("Enter the third number: ");
+double thirdNumValue = double.Parse(Console.ReadLine());
+
+Console.Write("Enter the fourth number: ");
+double fourthNumValue = double.Parse(Console.ReadLine());
+
+double averageValue = (firstNumValue + secondNumValue + thirdNumValue + fourthNumValue) / 4;
+
+Console.WriteLine($"The average of {firstValue}, {secondValue}, {thirdValue} and {fourthValue} is: {averageValue}");
+
+#endregion
+
+#region Task 3 Homework.md
+
+Console.Write("Input the first number: ");
+int firstValSum = int.Parse(Console.ReadLine());
+
+Console.Write("Input the second number: ");
+int secondValSum = int.Parse(Console.ReadLine());
+
+int tempValue = firstValSum;
+firstValSum = secondValSum;
+secondValSum = tempValue;
+
+Console.WriteLine("\nAfter Swapping:");
+Console.WriteLine("First Number: " + firstValSum);
+Console.WriteLine("Second Number: " + secondValSum);
 
 #endregion
