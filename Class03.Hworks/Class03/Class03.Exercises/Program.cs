@@ -57,3 +57,27 @@ for (int i = 1; i <= oddUpToNumber; i += 2)
 Console.WriteLine();
 
 #endregion
+
+#region Exercise 2
+
+Console.Write("Enter a number: ");
+int userNumber = int.Parse(Console.ReadLine()); 
+
+for (int i = 1; i <= userNumber; i++)
+{
+
+    if (i > 100)
+    {
+        Console.WriteLine("The limit is reached!");
+        break;
+    }
+
+    if (i % 3 == 0 || i % 7 == 0)
+    {
+        continue;
+    }
+
+    Console.WriteLine(i);
+}
+
+#endregion
