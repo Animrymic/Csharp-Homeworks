@@ -81,3 +81,84 @@ for (int i = 1; i <= userNumber; i++)
 }
 
 #endregion
+
+#region Exercise 3 
+
+string[] wordsArray = { "apple", "banana", "cherry", "date", "elderberry" };
+
+double[] decimalArray = { 1.12, 2.21, 3.34, 4.67, 5.89 };
+
+char[] characterArray = { 'a', 'b', 'c', 'd', 'e' };
+
+bool[] booleanArray = { true, false, true, false, true, true };
+
+// Array of arrays 
+
+int[][] numbersArray = new int[5][]
+{
+    new int[] {1, 2},
+    new int[] {3, 4},
+    new int[] {5, 6},
+    new int[] {7, 8},
+    new int[] {9, 10}
+};
+
+#endregion
+
+#region Exercise 4 
+
+int[] numArray = new int[5];
+int sum = 0;
+
+for (int i = 0; i < numArray.Length; i++)
+{
+    Console.Write("Enter a value for element " + (i + 1) + ": ");
+    numArray[i] = int.Parse(Console.ReadLine());
+}
+
+for (int i = 0; i < numArray.Length; i++)
+{
+    sum += numArray[i]; 
+}
+
+Console.WriteLine("The sum of all array element is: " + sum);
+
+#endregion
+
+#region Exercise 5
+
+string[] nameArray = new string[100];
+int currentIndex = 0;
+string userInput;
+string continueInput;
+
+do
+{
+    Console.Write("Enter a name: ");
+    userInput = Console.ReadLine();
+
+    if (currentIndex < nameArray.Length)
+    {
+        nameArray[currentIndex] = userInput;
+        currentIndex++;
+    }
+
+    else
+    {
+        Console.WriteLine("Array is full! Cannot add more names.");
+        break;
+    }
+
+    Console.Write("Do you want to enter another name? (Y/N): ");
+    continueInput = Console.ReadLine().ToUpper();
+
+} while (continueInput == "Y");
+
+Console.WriteLine("\nAll names entered: ");
+
+for (int i = 0; i < currentIndex; i++)
+{
+    Console.WriteLine(nameArray[i]);
+}
+
+#endregion
