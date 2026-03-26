@@ -9,6 +9,9 @@ static void Main()
     int age = AgeCalculator(birthDate);
 
     Console.WriteLine("Your age is: " + age);
+
+    // Keeps console open
+    Console.ReadLine();
 }
 
 static int AgeCalculator(DateTime birthDate)
@@ -17,7 +20,6 @@ static int AgeCalculator(DateTime birthDate)
 
     int age = today.Year - birthDate.Year;
 
-    // If birthday hasn't happened yet this year, subtract 1
     if (today.Month < birthDate.Month ||
        (today.Month == birthDate.Month && today.Day < birthDate.Day))
     {
