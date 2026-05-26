@@ -10,3 +10,5 @@ foreach (Employee emp in employees)
 {
     emp.DisplayInfo();
 }
+
+Console.WriteLine();
